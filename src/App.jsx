@@ -4,29 +4,35 @@ import { Routes, Route } from "react-router-dom";
 import CreateNew from "./components/pages/CreateNew";
 import PageNotFound from "./components/pages/PageNotFound";
 import Drwer from "./components/pages/Drwer";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import ThemeMode from "./components/pages/ThemeMode";
-
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import {useState } from "react";
 
 const App = () => {
+  const [blockOrnone, setBlockOrnone] = useState('none');
+  const [close, setClose] = useState('permanent');
+  const [theme, setTheme] = useState(localStorage.getItem('currentTheme'));
+  const [col, setCol] = useState(true)
+
   
+  const darkTheme = createTheme({
+    palette: {
+      mode: theme ,
+    },
+  });
+
   return (
-    
-    // <ThemeProvider theme={darkTheme}>
-      // <CssBaseline />
-      <>
-      {/* <ThemeMode /> */}
-      <Navbar />
-      <Drwer />
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Navbar  setBlockOrnone={setBlockOrnone} setClose={setClose} />
+      <Drwer theme={theme} setTheme={setTheme} blockOrnone={blockOrnone} setClose={setClose} close={close} setBlockOrnone={setBlockOrnone} />
       <Routes>
         <Route path="*" element={<PageNotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/creation" element={<CreateNew />} />
+        <Route path="/create" element={<CreateNew />} />
       </Routes>
-      </>
-      // </ThemeProvider>
+    </ThemeProvider>
   );
 };
 

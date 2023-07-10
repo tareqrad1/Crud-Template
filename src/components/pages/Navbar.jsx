@@ -6,11 +6,22 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import PhotoAvatar from '../images/WhatsApp Image 2022-10-20 at 20.09.21.jpg'
-const Navbar = () => {
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton'
+
+const Navbar = ({setBlockOrnone, setClose}) => {
+  function handleClick() {
+    setBlockOrnone('block');
+    setClose('temporary');
+  }
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{width:'calc(100% - 240px)', ml: '240px'}}>
+      <AppBar position="static" sx={{width:{xs:'100%', md:'calc(100% - 240px)'}, ml: {xs:'0', md:'240px'}}}>
         <Toolbar>
+            <IconButton onClick={handleClick } >
+            <MenuIcon sx={{display:{md:'none'}, cursor:'pointer'}} />
+            </IconButton>
             <Link to='/home' style={{textDecoration:'none', color:'white',flexGrow:1,fontWeight:"bold"}}>My Experience</Link>
             <Typography variant="p" component="p" sx={{mr:1}}>Tareq Radi</Typography>
             <Avatar alt="Remy Sharp" src={PhotoAvatar}/>

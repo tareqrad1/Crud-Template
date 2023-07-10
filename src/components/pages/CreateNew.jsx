@@ -8,17 +8,17 @@ const CreateNew = () => {
   return (
     <Box component='form'
       sx={{
-        m: "80px 0 0 240px",
-        width: "calc(100% - 240px)",
+        m: {md:"80px 0 0 240px", xs:'40px 0 0 0'},
+        width: {md:"calc(100% - 240px)", xs:'100%'},
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
       }}
     >
-      <TextField sx={{width:'600px', mb:'20px'}} id="outlined-basic" label="Title" variant="outlined" />
-      <TextField sx={{width:'600px', mb:'20px'}} id="outlined-basic" label="Amount" variant="outlined" />
-      <Button sx={{width:'500px' }} variant="contained" endIcon={<SendIcon />}>
+      <TextField sx={{width:{xs:'350px' ,md:'600px'}, mb:'20px'}} id="outlined-basic1" label="Title" variant="outlined" />
+      <TextField sx={{width:{xs:'350px' ,md:'600px'}, mb:'20px'}} id="outlined-basic2" label="Amount" variant="outlined" />
+      <Button sx={{width:{xs:'200px' ,md:'400px'} }} variant="contained" endIcon={<SendIcon />}>
         Send
       </Button>
     </Box>
