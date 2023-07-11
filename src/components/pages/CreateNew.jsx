@@ -3,9 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
@@ -25,13 +23,11 @@ const CreateNew = () => {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
   const handleClick = () => {
     setOpen(true);
   };
-
   // 
   function postData(e) {
     let params = {
