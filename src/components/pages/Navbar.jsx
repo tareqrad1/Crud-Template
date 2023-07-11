@@ -19,8 +19,8 @@ const Navbar = ({setBlockOrnone, setClose}) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{width:{xs:'100%', md:'calc(100% - 240px)'}, ml: {xs:'0', md:'240px'}}}>
         <Toolbar>
-            <IconButton onClick={handleClick } >
-            <MenuIcon sx={{display:{md:'none'}, cursor:'pointer'}} />
+            <IconButton sx={{display:{md:'none'}}} onClick={handleClick } >
+            <MenuIcon sx={{cursor:'pointer'}} />
             </IconButton>
             <Link to='/home' style={{textDecoration:'none', color:'white',flexGrow:1,fontWeight:"bold"}}>My Experience</Link>
             <Typography variant="p" component="p" sx={{mr:1}}>Tareq Radi</Typography>

@@ -12,19 +12,16 @@ const App = () => {
   const [blockOrnone, setBlockOrnone] = useState('none');
   const [close, setClose] = useState('permanent');
   const [theme, setTheme] = useState(localStorage.getItem('currentTheme'));
-  const [col, setCol] = useState(true)
 
-  
   const darkTheme = createTheme({
     palette: {
       mode: theme ,
     },
   });
-
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Navbar  setBlockOrnone={setBlockOrnone} setClose={setClose} />
+      <Navbar setBlockOrnone={setBlockOrnone} setClose={setClose} />
       <Drwer theme={theme} setTheme={setTheme} blockOrnone={blockOrnone} setClose={setClose} close={close} setBlockOrnone={setBlockOrnone} />
       <Routes>
         <Route path="*" element={<PageNotFound />} />

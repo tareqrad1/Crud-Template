@@ -1,0 +1,19 @@
+{
+  "myData": [
+    {
+      "titleData": "tareq",
+      "priceData": 9,
+      "id": 1
+    },
+    {
+      "titleData": "",
+      "priceData": 0,
+      "id": 2
+    },
+    {
+      "titleData": "",
+      "priceData": 0,
+      "id": 3
+    }
+  ]
+}

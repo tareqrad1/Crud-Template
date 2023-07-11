@@ -13,7 +13,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useLocation, useNavigate } from "react-router-dom";
-import Button from "@mui/material/Button";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import IconButton from '@mui/material/IconButton'
 const drawerWidth = 240;
@@ -34,7 +33,7 @@ const Drwer = ({theme, setTheme, blockOrnone, close, setBlockOrnone }) => {
               boxSizing: "border-box",
             },
           }}
-          variant={close}
+          variant= {close}
           open={true}
           anchor="left"
           onClose={() => {
