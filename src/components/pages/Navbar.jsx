@@ -14,9 +14,8 @@ const Navbar = ({setBlockOrnone, setClose}) => {
     setBlockOrnone('block');
     setClose('temporary');
   }
-  
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} component='nav'>
       <AppBar position="static" sx={{width:{xs:'100%', md:'calc(100% - 240px)'}, ml: {xs:'0', md:'240px'}}}>
         <Toolbar>
             <IconButton sx={{display:{md:'none'}}} onClick={handleClick } >
